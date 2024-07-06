@@ -44,41 +44,47 @@
 <body>
 
 <div class="navbar">
-    <a href="home" onclick="showContent('home')">Diego Atencia</a>
-    <a href="portfolio" onclick="showContent('portfolio')">Portfolio</a>
-    <a href="privacy-policy" onclick="showContent('privacy-policy')">Private Policy</a>
+  <a href="#home" onclick="showContent('home')">Diego Atencia</a>
+  <a href="#portfolio" onclick="showContent('portfolio')">Portfolio</a>
+  <a href="#privacy-policy" onclick="showContent('privacy-policy')">Private Policy</a>
 </div>
-    
-<div id="home-content" class="main-content">
-    <h2>¡Hola, soy Diego Atencia!</h2>
-    <p>Bienvenido a mi página personal.</p>
+
+<div id="home" class="content">
+  <div class="main-content">
+    <h2>Inicio - Diego Atencia</h2>
+    <p>Bienvenido a mi página de inicio.</p>
+  </div>
 </div>
-    
-<div id="portfolio-content" class="main-content">
-    <h2>Mi Portfolio</h2>
+
+<div id="portfolio" class="content">
+  <div class="main-content">
+    <h2>Portfolio de Diego Atencia</h2>
     <p>Aquí puedes ver algunos de mis trabajos y proyectos.</p>
+  </div>
 </div>
-    
-<div id="privacy-policy-content" class="main-content">
+
+<div id="privacy-policy" class="content">
+  <div class="main-content">
     <h2>Política de Privacidad</h2>
-    <p>Información sobre privacy policy de la app.</p>
+    <p>Aquí puedes leer nuestra política de privacidad.</p>
+  </div>
 </div>
-    
+
 <script>
-// Función para mostrar el contenido según el enlace seleccionado
-function showContent(contentId) {
+  // Función para mostrar el contenido correspondiente al enlace clicado
+  function showContent(id) {
     // Oculta todos los contenidos
-    //var contents = document.getElementsByClassName("main-content");
-    //for (var i = 0; i < contents.length; i++) {
-      //contents[i].style.display = "none";
-    //}
-        
-    // Muestra el contenido correspondiente al enlace seleccionado
-    var selectedContent = document.getElementById(contentId + "-content");
-    if (selectedContent) {
-        selectedContent.style.display = "block";
+    var contents = document.getElementsByClassName('content');
+    for (var i = 0; i < contents.length; i++) {
+      contents[i].classList.remove('active');
     }
-}
+
+    // Muestra solo el contenido deseado
+    document.getElementById(id).classList.add('active');
+  }
+
+  // Mostrar la página de inicio por defecto al cargar la página
+  document.getElementById('home').classList.add('active');
 </script>
 
 </body>
