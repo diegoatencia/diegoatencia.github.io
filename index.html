@@ -70,7 +70,11 @@ function showContent(contentId) {
     // Oculta todos los contenidos
     var contents = document.getElementsByClassName("main-content");
     for (var i = 0; i < contents.length; i++) {
+      if (i == 0) {
+        contents[i].style.display = "block";
+      } else {
         contents[i].style.display = "none";
+      }
     }
         
     // Muestra el contenido correspondiente al enlace seleccionado
