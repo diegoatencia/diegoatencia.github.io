@@ -43,41 +43,41 @@
 </head>
 <body>
 
-    <div class="navbar">
-        <a href="#home" onclick="openTab(event, 'home')">Diego Atencia</a>
-        <a href="#portfolio" onclick="openTab(event, 'portfolio')">Portfolio</a>
-        <a href="#privacy-policy" onclick="openTab(event, 'privacy-policy')">Private Policy</a>
-      </div>
-      
-      <div id="home" class="tab-content active">
-        <h2>Diego Atencia</h2>
-        <p>Bienvenido al sitio web personal de Diego Atencia.</p>
-      </div>
-      
-      <div id="portfolio" class="tab-content">
-        <h2>Portfolio</h2>
-        <p>Aquí puedes ver algunos de mis trabajos y proyectos.</p>
-      </div>
-      
-      <div id="privacy-policy" class="tab-content">
-        <h2>Política de Privacidad</h2>
-        <p>A continuación se detalla nuestra política de privacidad.</p>
-      </div>
+<div class="navbar">
+    <a href="#home" onclick="openTab(event, 'home')">Diego Atencia</a>
+    <a href="#portfolio" onclick="openTab(event, 'portfolio')">Portfolio</a>
+    <a href="#privacy-policy" onclick="openTab(event, 'privacy-policy')">Private Policy</a>
+</div>
 
-      <script>
-        // Función para abrir la pestaña seleccionada
-        function openTab(evt, tabName) {
-          var i, tabcontent, tablinks;
-          tabcontent = document.getElementsByClassName("tab-content");
-          for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].classList.remove("active"); // Oculta todos los contenidos de pestaña
-          }
-          document.getElementById(tabName).classList.add("active"); // Muestra el contenido de la pestaña seleccionada
-        }
-      
-        // Mostrar el contenido de la primera pestaña por defecto
-        document.getElementById("home").classList.add("active");
-      </script>
+<div id="home" class="tab-content active">
+    <h2>Diego Atencia</h2>
+    <p>Bienvenido al sitio web personal de Diego Atencia.</p>
+</div>
+
+<div id="portfolio" class="tab-content">
+    <h2>Portfolio</h2>
+    <p>Aquí puedes ver algunos de mis trabajos y proyectos.</p>
+</div>
+
+<div id="privacy-policy" class="tab-content">
+    <h2>Política de Privacidad</h2>
+    <p>A continuación se detalla nuestra política de privacidad.</p>
+</div>
+
+<script>
+// Función para abrir la pestaña seleccionada
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].classList.remove("active"); // Oculta todos los contenidos de pestaña
+    }
+    document.getElementById(tabName).classList.add("active"); // Muestra el contenido de la pestaña seleccionada
+}
+
+// Mostrar el contenido de la primera pestaña por defecto
+document.getElementById("home").classList.add("active");
+</script>
 
 </body>
 </html>
