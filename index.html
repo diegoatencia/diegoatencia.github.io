@@ -44,39 +44,41 @@
 <body>
 
 <div class="navbar">
-    <a href="#home" onclick="openTab(event, 'home')">Diego Atencia</a>
-    <a href="#portfolio" onclick="openTab(event, 'portfolio')">Portfolio</a>
-    <a href="#privacy-policy" onclick="openTab(event, 'privacy-policy')">Private Policy</a>
+    <a href="#home" onclick="showContent('home')">Diego Atencia</a>
+    <a href="#portfolio" onclick="showContent('portfolio')">Portfolio</a>
+    <a href="#privacy-policy" onclick="showContent('privacy-policy')">Private Policy</a>
 </div>
-
-<div id="home" class="tab-content active">
-    <h2>Diego Atencia</h2>
-    <p>Bienvenido al sitio web personal de Diego Atencia.</p>
+    
+<div id="home-content" class="main-content">
+    <h2>¡Hola, soy Diego Atencia!</h2>
+    <p>Bienvenido a mi página personal.</p>
 </div>
-
-<div id="portfolio" class="tab-content">
-    <h2>Portfolio</h2>
+    
+<div id="portfolio-content" class="main-content">
+    <h2>Mi Portfolio</h2>
     <p>Aquí puedes ver algunos de mis trabajos y proyectos.</p>
 </div>
-
-<div id="privacy-policy" class="tab-content">
+    
+<div id="privacy-policy-content" class="main-content">
     <h2>Política de Privacidad</h2>
-    <p>A continuación se detalla nuestra política de privacidad.</p>
+    <p>Información sobre cómo manejamos la privacidad en nuestro sitio.</p>
 </div>
-
+    
 <script>
-// Función para abrir la pestaña seleccionada
-function openTab(evt, tabName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tab-content");
-    for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].classList.remove("active"); // Oculta todos los contenidos de pestaña
+// Función para mostrar el contenido según el enlace seleccionado
+function showContent(contentId) {
+    // Oculta todos los contenidos
+    var contents = document.getElementsByClassName("main-content");
+    for (var i = 0; i < contents.length; i++) {
+        contents[i].style.display = "none";
     }
-    document.getElementById(tabName).classList.add("active"); // Muestra el contenido de la pestaña seleccionada
+        
+    // Muestra el contenido correspondiente al enlace seleccionado
+    var selectedContent = document.getElementById(contentId + "-content");
+    if (selectedContent) {
+        selectedContent.style.display = "block";
+    }
 }
-
-// Mostrar el contenido de la primera pestaña por defecto
-document.getElementById("home").classList.add("active");
 </script>
 
 </body>
